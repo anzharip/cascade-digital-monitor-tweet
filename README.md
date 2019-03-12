@@ -13,3 +13,6 @@ FIREBASE_COLLECTION_NAME = u"dummy"
 HASHTAG_LIST = [u"dummy"]
 FETCHED_TWEETS_FILENAME = u"dummy.json"
 FIREBASE_COLLECTION_NAME = u"dummy"```
+
+Then run the app: 
+python3 app.py
