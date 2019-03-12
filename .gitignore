@@ -1,5 +1,6 @@
 # Custom
 env_file.py
+*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
