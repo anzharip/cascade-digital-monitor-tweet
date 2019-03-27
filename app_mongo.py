@@ -11,6 +11,10 @@ import uuid
 # To convert str data to object
 import json
 
+# To get current datetime, adding it to app_timestamp
+import datetime
+import pytz
+
 # Import PyMongo
 from pymongo import MongoClient
 import urllib.parse
@@ -52,9 +56,10 @@ class StdOutListener(StreamListener):
         try:
             mongodb_posts = db['tweets']
             post = json.loads(data)
+            post['app_timestamp'] = pytz.utc.localize(datetime.datetime.utcnow())
             post_id = mongodb_posts.insert_one(post).inserted_id
             # data is str type
-            print(data)
+            print(post)
         except BaseException as e:
             print("Error on_data %s" % str(e))
         return True
